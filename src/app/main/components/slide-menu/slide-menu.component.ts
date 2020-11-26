@@ -2,43 +2,43 @@ import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation
 import {Store} from '@ngrx/store';
 import {RootStoreState, SlideMenuStoreActions} from '../../../root-store/';
 import {MenuItem} from 'primeng/api';
+import {RouterStoreActions} from '@root-store/router-store/index';
 
 @Component({
   selector: 'app-slide-menu',
   template: `
-    <div class="slide-header"><i class="fas fa-heart"></i> Menù</div>
-    <!--    <p-panelMenu [model]="items" [style.width.%]="100"></p-panelMenu>-->
-    <p-scrollPanel #scrollPanel [style]="{height: '100%'}">
-      <p-menu [model]="items" styleClass="slide-menu" [style.width.%]="100"></p-menu>
-    </p-scrollPanel>
+      <div class="slide-header"><i class="fas fa-heart"></i> Menù</div>
+      <!--    <p-panelMenu [model]="items" [style.width.%]="100"></p-panelMenu>-->
+      <p-scrollPanel #scrollPanel [style]="{height: '100%'}">
+          <p-menu [model]="items" styleClass="slide-menu" [style.width.%]="100"></p-menu>
+      </p-scrollPanel>
   `,
   styles: [`
-    .slide-header {
-      height: 70px;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #0067b7;
-      color: #FFF;
-      font-size: x-large;
-      padding: 18px;
-    }
+      .slide-header {
+          height: 70px;
+          top: 0;
+          left: 0;
+          right: 0;
+          background-color: #0067b7;
+          color: #FFF;
+          font-size: x-large;
+          padding: 18px;
+      }
 
-    .slide-header i {
-      font-size: xx-large;
-    }
+      .slide-header i {
+          font-size: xx-large;
+      }
 
-    .p-menu {
-      width: unset !important;
-      border: unset !important;
-    }
+      .p-menu {
+          width: unset !important;
+          border: unset !important;
+      }
 
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class
-SlideMenuComponent implements OnInit, OnDestroy {
+export class SlideMenuComponent implements OnInit, OnDestroy {
 
   constructor(private readonly store$: Store<RootStoreState.State>) {
   }
@@ -50,7 +50,9 @@ SlideMenuComponent implements OnInit, OnDestroy {
 
   // todo: completare profilazione dei pulsanti.
   ngOnInit(): void {
-    this.items = [{
+    this.items = [
+/*
+      {
       label: 'File (demonstrative)',
       items: [
         {label: 'New  (demonstrative)', icon: 'pi pi-fw pi-plus'},
@@ -63,7 +65,53 @@ SlideMenuComponent implements OnInit, OnDestroy {
           {label: 'Add User (demonstrative)', icon: 'pi pi-fw pi-user-plus'},
           {label: 'Remove User (demonstrative)', icon: 'pi pi-fw pi-user-minus'}
         ]
-      }];
+      },
+*/
+      {
+        label: 'Coin',
+        items: [
+          {
+            label: 'World Coins',
+            icon: 'pi pi-fw pi-dollar',
+            command: (event$) => {
+              // invoco il router per cambiare pagina
+              this.store$.dispatch(RouterStoreActions.RouterGo({path: ['coin']}));
+
+              // salvo nello store del menù l'elemento selezionato.
+              this.store$.dispatch(SlideMenuStoreActions.Select({
+                item: {
+                  data: {},
+                  breadcrumb: ['Home', 'Coin']
+                }
+              }));
+            }
+          },
+
+        ]
+      },
+      {
+        label: 'Person',
+        items: [
+          {
+            label: 'Person',
+            icon: 'pi pi-fw pi-user',
+            command: (event$) => {
+              // invoco il router per cambiare pagina
+              this.store$.dispatch(RouterStoreActions.RouterGo({path: ['person']}));
+
+              // salvo nello store del menù l'elemento selezionato.
+              this.store$.dispatch(SlideMenuStoreActions.Select({
+                item: {
+                  data: {},
+                  breadcrumb: ['Home', 'Person']
+                }
+              }));
+            }
+          },
+
+        ]
+      }
+    ];
     // const items = [
     //   {
     //     label: 'File',

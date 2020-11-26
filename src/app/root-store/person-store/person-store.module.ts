@@ -17,8 +17,11 @@ export const INJECTION_TOKEN = new InjectionToken<ActionReducer<State>>(`${Names
 	],
 	declarations: [],
 	providers: [PersonStoreEffects,
+    // tslint:disable-next-line:indent
 		{
+      // tslint:disable-next-line:indent
 			provide: INJECTION_TOKEN,
+      // tslint:disable-next-line:indent
 			useFactory: (): ActionReducer<State> => featureReducer
 		}]
 })

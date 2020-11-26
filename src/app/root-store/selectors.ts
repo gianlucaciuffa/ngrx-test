@@ -1,9 +1,11 @@
+import {MarketStoreSelectors} from '@root-store/market-store';
+import {CoinStoreSelectors} from '@root-store/coin-store';
 import {createSelectorFactory, defaultMemoize} from '@ngrx/store';
 
 const customMemoizer = (aFn) => defaultMemoize(aFn, (a: any, b: any) => a === b);
 
 export const selectError =
-  createSelectorFactory(customMemoizer)(
+  createSelectorFactory(customMemoizer)(MarketStoreSelectors.selectError,CoinStoreSelectors.selectError,
     (...args: string[]) => {
       console.log('selectError.args', args);
       return args.join('');
@@ -11,7 +13,7 @@ export const selectError =
   );
 
 export const selectIsLoading =
-  createSelectorFactory(customMemoizer)(
+  createSelectorFactory(customMemoizer)(MarketStoreSelectors.selectIsLoading,CoinStoreSelectors.selectIsLoading,
     (...args: boolean[]) => {
       console.log('selectIsLoading.args', args);
       return args.find((value => value));

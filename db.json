@@ -2,23 +2,39 @@
   "coin": [
     {
       "id": 1,
-      "nome": "luca"
+      "name": "euro",
+      "description": "European Coin",
+      "value": "10"
     },
     {
       "id": 2,
-      "nome": "luca"
+      "name": "dollaro",
+      "description": "US Coin",
+      "value": "8"
     },
     {
       "id": 3,
-      "nome": "luca"
+      "name": "sterlina",
+      "description": "UK Coin",
+      "value": "13"
     },
     {
       "id": 4,
-      "nome": "luca"
+      "name": "bath",
+      "description": "Thai Coin",
+      "value": "1"
     },
     {
       "id": 5,
-      "nome": "luca"
+      "name": "yen",
+      "description": "Japanese Coin",
+      "value": "15"
+    },
+    {
+      "value": "7",
+      "name": "aud",
+      "description": "Australian Coin",
+      "id": 6
     }
   ]
 }

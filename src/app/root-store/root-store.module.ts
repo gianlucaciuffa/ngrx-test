@@ -9,6 +9,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {SlideMenuStoreModule} from '@root-store/slide-menu-store';
 import { CoinStoreModule } from '@root-store/coin-store';
 import { MarketStoreModule } from '@root-store/market-store';
+import { PersonStoreModule } from '@root-store/person-store';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { MarketStoreModule } from '@root-store/market-store';
     }),
     CoinStoreModule,
     MarketStoreModule,
+    PersonStoreModule,
   ],
   declarations: []
 })

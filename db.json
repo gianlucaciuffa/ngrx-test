@@ -36,5 +36,22 @@
       "description": "Australian Coin",
       "id": 6
     }
+  ],
+  "person": [
+    {
+      "id": 1,
+      "name": "gianluca",
+      "surname": "ciuffa"
+    },
+    {
+      "name": "giorgia",
+      "surname": "farris",
+      "id": 2
+    },
+    {
+      "name": "ginevra",
+      "surname": "ciuffa",
+      "id": 3
+    }
   ]
 }

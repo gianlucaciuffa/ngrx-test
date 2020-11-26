@@ -37,7 +37,8 @@ import {MenuItem} from 'primeng/api';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class SlideMenuComponent implements OnInit, OnDestroy {
+export class
+SlideMenuComponent implements OnInit, OnDestroy {
 
   constructor(private readonly store$: Store<RootStoreState.State>) {
   }

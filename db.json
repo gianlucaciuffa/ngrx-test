@@ -2,39 +2,45 @@
   "coin": [
     {
       "id": 1,
-      "name": "euro",
-      "description": "European Coin",
-      "value": "10"
+      "name": "EUR",
+      "value": "10",
+      "description": "European Coin"
     },
     {
       "id": 2,
-      "name": "dollaro",
-      "description": "US Coin",
-      "value": "8"
+      "name": "USD",
+      "value": "8",
+      "description": "US Coin"
     },
     {
       "id": 3,
-      "name": "sterlina",
-      "description": "UK Coin",
-      "value": "13"
+      "name": "GBP",
+      "value": "13",
+      "description": "UK Coin"
     },
     {
       "id": 4,
-      "name": "bath",
-      "description": "Thai Coin",
-      "value": "1"
+      "name": "BTH",
+      "value": "1",
+      "description": "Thai Coin"
     },
     {
       "id": 5,
-      "name": "yen",
-      "description": "Japanese Coin",
-      "value": "15"
+      "name": "JPY",
+      "value": "15",
+      "description": "Japanese Coin"
     },
     {
+      "id": 6,
+      "name": "AUD",
       "value": "7",
-      "name": "aud",
-      "description": "Australian Coin",
-      "id": 6
+      "description": "Australian Coin"
+    },
+    {
+      "id": 7,
+      "name": "NOK",
+      "value": "9",
+      "description": "Norway Coin"
     }
   ],
   "person": [

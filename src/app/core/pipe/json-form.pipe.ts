@@ -15,6 +15,7 @@ export class JsonFormPipe implements PipeTransform {
       status: value.status,
       touched: value.touched,
       valid: value.valid,
+      dirty: value.dirty
     };
     for (const key  in value.controls) {
       const val = {};

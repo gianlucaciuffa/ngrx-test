@@ -10,3 +10,4 @@ export * from './slide-menu-store';
 export * from './coin-store';
 export * from './market-store';
 export * from './person-store';
+export * from './counter-store';

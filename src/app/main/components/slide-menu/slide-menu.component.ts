@@ -51,22 +51,6 @@ export class SlideMenuComponent implements OnInit, OnDestroy {
   // todo: completare profilazione dei pulsanti.
   ngOnInit(): void {
     this.items = [
-/*
-      {
-      label: 'File (demonstrative)',
-      items: [
-        {label: 'New  (demonstrative)', icon: 'pi pi-fw pi-plus'},
-        {label: 'Download  (demonstrative)', icon: 'pi pi-fw pi-download'}
-      ]
-    },
-      {
-        label: 'Edit (demonstrative)',
-        items: [
-          {label: 'Add User (demonstrative)', icon: 'pi pi-fw pi-user-plus'},
-          {label: 'Remove User (demonstrative)', icon: 'pi pi-fw pi-user-minus'}
-        ]
-      },
-*/
       {
         label: 'Coin',
         items: [
@@ -109,6 +93,27 @@ export class SlideMenuComponent implements OnInit, OnDestroy {
             }
           },
 
+        ]
+      },
+      {
+        label: 'Counter',
+        items: [
+          {
+            label: 'Counter',
+            icon: 'pi pi-fw pi-clock',
+            command: (event$) => {
+              // invoco il router per cambiare pagina
+              this.store$.dispatch(RouterStoreActions.RouterGo({path: ['counter']}));
+
+              // salvo nello store del menù l'elemento selezionato.
+              this.store$.dispatch(SlideMenuStoreActions.Select({
+                item: {
+                  data: {},
+                  breadcrumb: ['Home', 'Counter']
+                }
+              }));
+            }
+          }
         ]
       }
     ];

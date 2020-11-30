@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {CounterStoreActions, CounterStoreSelectors, RootStoreState} from '@root-store/index';
+import {CounterStoreSelectors, RootStoreState} from '@root-store/index';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -20,19 +20,19 @@ export class CounterMainComponent implements OnInit {
     this.count$ = this.store$.select(CounterStoreSelectors.selectQuantity);
   }
 
-  increment(): void {
+/*  increment(): void {
     console.log('CounterMainComponent.increment()');
     this.store$.dispatch(CounterStoreActions.Increment());
-  }
+  }*/
 
-  decrement(): void {
+/*  decrement(): void {
     console.log('CounterMainComponent.decrement()');
     this.store$.dispatch(CounterStoreActions.Decrement());
-  }
+  }*/
 
-  reset(): void {
+/*  reset(): void {
     console.log('CounterMainComponent.reset()');
     this.store$.dispatch(CounterStoreActions.Reset());
-  }
+  }*/
 
 }

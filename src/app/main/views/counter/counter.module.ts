@@ -12,6 +12,9 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {SearchModule} from '@components/search/search.module';
 import {PipesModule} from '@core/pipe/pipes.module';
+import {IncrementModule} from '@components/counter/increment/increment.component';
+import {DecrementModule} from '@components/counter/decrement/decrement.component';
+import {ResetModule} from '@components/counter/reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {PipesModule} from '@core/pipe/pipes.module';
     ButtonModule,
     InputTextModule,
     PipesModule,
-    SearchModule
+    SearchModule,
+    IncrementModule,
+    DecrementModule,
+    ResetModule
   ],
   providers: [],
   entryComponents: []

@@ -18,24 +18,17 @@ export class CoinListComponent implements OnInit {
 
 
   collection$: Observable<Coin[]>;
-  cols: any;
 
   constructor(private store$: Store<RootStoreState.State>,
               private confirmationService: ConfirmationService) {
     console.log('CoinListComponent.constructor()');
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('CoinListComponent.ngOnInit()');
 
     this.collection$ = this.store$.select(
       CoinStoreSelectors.selectAll
-    ).pipe(
-      tap(values => {
-        if (values && values.length > 0) {
-          this.cols = Object.keys(values[0]);
-        }
-      })
     );
 
     this.store$.dispatch(
@@ -44,7 +37,7 @@ export class CoinListComponent implements OnInit {
 
   }
 
-  onEdit(item) {
+  onEdit(item): void {
     console.log('CoinListComponent.onEdit()');
 
     const data: PopUpData<Coin> = {
@@ -60,7 +53,7 @@ export class CoinListComponent implements OnInit {
 
   }
 
-  onCopy(value) {
+  onCopy(value): void {
     console.log('CoinListComponent.onCopy()');
 
     const item = {...{}, ...value, ...{id: null}};
@@ -76,7 +69,7 @@ export class CoinListComponent implements OnInit {
 
   }
 
-  onDelete(item) {
+  onDelete(item): void {
 
     this.confirmationService.confirm({
       message: 'Are you sure that you want to perform this action?',

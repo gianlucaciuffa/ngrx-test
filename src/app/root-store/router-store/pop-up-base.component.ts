@@ -29,7 +29,7 @@ export class PopUpBaseComponent<T> implements OnInit, OnDestroy {
     ref.detach();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this.store$.select(RouterStoreSelectors.selectPopUp).pipe(
       take(1),
     ).subscribe(

@@ -18,12 +18,35 @@
       <form
         class="dynamic-form"
         [formGroup]="form">
-        <div *ngFor="let key of keys" class="p-grid">
+
+        <div class="p-grid">
           <div class="p-col">
-            <label for="{{key}}"><strong>{{key}}</strong></label><br>
-            <input id="{{key}}" name="{{key}}" type="text" class="form-control" pInputText [formControlName]="key"/>
+            <label for="id"><strong>id</strong></label><br>
+            <input id="id" name="id" type="text" class="form-control" pInputText [formControl]="id"/>
           </div>
         </div>
+
+        <div class="p-grid">
+          <div class="p-col">
+            <label for="name"><strong>name</strong></label><br>
+            <input id="name" name="name" type="text" class="form-control" pInputText [formControl]="name"/>
+          </div>
+        </div>
+
+        <div class="p-grid">
+          <div class="p-col">
+            <label for="value"><strong>value</strong></label><br>
+            <input id="value" name="value" type="text" class="form-control" pInputText [formControl]="value"/>
+          </div>
+        </div>
+
+        <div class="p-grid">
+          <div class="p-col">
+            <label for="description"><strong>description</strong></label><br>
+            <input id="description" name="description" type="text" class="form-control" pInputText [formControl]="description"/>
+          </div>
+        </div>
+
       </form>
     </div>
     <div class="p-col">
@@ -35,7 +58,7 @@
 
 
   <ng-template pTemplate="footer">
-    <button pButton class="p-button-success mr-1" label="save" (click)="submit(form.getRawValue())"></button>
+    <button pButton class="p-button-success mr-1" label="save" [disabled]="!form.valid" (click)="submit(form.getRawValue())"></button>
     <button pButton type="button" label="Cancel" (click)="cancel()"></button>
   </ng-template>
 

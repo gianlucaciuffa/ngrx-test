@@ -20,19 +20,4 @@ export class CounterMainComponent implements OnInit {
     this.count$ = this.store$.select(CounterStoreSelectors.selectQuantity);
   }
 
-/*  increment(): void {
-    console.log('CounterMainComponent.increment()');
-    this.store$.dispatch(CounterStoreActions.Increment());
-  }*/
-
-/*  decrement(): void {
-    console.log('CounterMainComponent.decrement()');
-    this.store$.dispatch(CounterStoreActions.Decrement());
-  }*/
-
-/*  reset(): void {
-    console.log('CounterMainComponent.reset()');
-    this.store$.dispatch(CounterStoreActions.Reset());
-  }*/
-
 }

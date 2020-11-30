@@ -17,7 +17,7 @@ export class IncrementComponent implements OnInit {
   }
 
   increment(): void {
-    console.log('CounterMainComponent.increment()');
+    console.log('IncrementComponent.increment()');
     this.store$.dispatch(CounterStoreActions.Increment());
   }
 

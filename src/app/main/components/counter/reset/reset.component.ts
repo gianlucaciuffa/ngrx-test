@@ -17,7 +17,7 @@ export class ResetComponent implements OnInit {
   }
 
   reset(): void {
-    console.log('CounterMainComponent.reset()');
+    console.log('ResetComponent.reset()');
     this.store$.dispatch(CounterStoreActions.Reset());
   }
 

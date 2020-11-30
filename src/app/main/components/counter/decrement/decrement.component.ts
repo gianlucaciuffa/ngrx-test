@@ -17,7 +17,7 @@ export class DecrementComponent implements OnInit {
   }
 
   decrement(): void {
-    console.log('CounterMainComponent.decrement()');
+    console.log('DecrementComponent.decrement()');
     this.store$.dispatch(CounterStoreActions.Decrement());
   }
 

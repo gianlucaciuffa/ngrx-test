@@ -9,6 +9,7 @@ export interface State {
   items: MenuItem[];
 }
 
+// @ts-ignore
 export const initialState: State = {
   open: false,
   item: {breadcrumb: [], data: null},
@@ -16,6 +17,8 @@ export const initialState: State = {
     {
       label: 'World Coins',
       icon: 'pi pi-fw pi-dollar',
+      // @ts-ignore
+      roles: ['roleA'],
       command: (event$) => {
         // invoco il router per cambiare pagina
         event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['coin']}));
@@ -32,6 +35,8 @@ export const initialState: State = {
     {
       label: 'Cars',
       icon: 'pi pi-fw pi-comment',
+      // @ts-ignore
+      roles: ['roleB'],
       command: (event$) => {
         // invoco il router per cambiare pagina
         event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['car']}));
@@ -48,6 +53,8 @@ export const initialState: State = {
     {
       label: 'Structure',
       icon: 'pi pi-fw pi-home',
+      // @ts-ignore
+      roles: ['roleC'],
       command: (event$) => {
         // invoco il router per cambiare pagina
         event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['structure']}));
@@ -64,6 +71,8 @@ export const initialState: State = {
     {
       label: 'Person',
       icon: 'pi pi-fw pi-user',
+      // @ts-ignore
+      roles: ['roleA', 'roleC'],
       command: (event$) => {
         // invoco il router per cambiare pagina
         event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['person']}));
@@ -80,6 +89,8 @@ export const initialState: State = {
     {
       label: 'Counter',
       icon: 'pi pi-fw pi-clock',
+      // @ts-ignore
+      roles: ['roleA', 'roleB', 'roleC'],
       command: (event$) => {
         // invoco il router per cambiare pagina
         event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['counter']}));

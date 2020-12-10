@@ -11,6 +11,8 @@ import { CoinStoreModule } from '@root-store/coin-store';
 import { MarketStoreModule } from '@root-store/market-store';
 import { PersonStoreModule } from '@root-store/person-store';
 import { CounterStoreModule } from '@root-store/counter-store';
+import { CarStoreModule } from '@root-store/car-store';
+import { StructureStoreModule } from '@root-store/structure-store';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { CounterStoreModule } from '@root-store/counter-store';
     MarketStoreModule,
     PersonStoreModule,
     CounterStoreModule,
+    CarStoreModule,
+    StructureStoreModule,
   ],
   declarations: []
 })

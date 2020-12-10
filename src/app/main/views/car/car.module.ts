@@ -2,41 +2,39 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CoinEditComponent} from './coin-edit/coin-edit.component';
-import {CoinMainComponent} from './coin-main/coin-main.component';
-import {CoinListComponent} from './coin-list/coin-list.component';
-import {CoinRoutingModule} from './coin-routing.module';
-import {ButtonNewCoinComponent} from './components/button-new-coin.component';
+import {CarEditComponent} from './car-edit/car-edit.component';
+import {CarMainComponent} from './car-main/car-main.component';
+import {CarListComponent} from './car-list/car-list.component';
+import {CarRoutingModule} from './car-routing.module';
+import {ButtonNewCarComponent} from './components/button-new-car.component';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {SearchModule} from '@components/search/search.module';
 import {PipesModule} from '@core/pipe/pipes.module';
-import {FormErrorMsgModule} from '@core/components/form-error-msg/form-error-msg.component';
 
 @NgModule({
   declarations: [
-    CoinEditComponent,
-    CoinMainComponent,
-    CoinListComponent,
-    ButtonNewCoinComponent
+    CarEditComponent,
+    CarMainComponent,
+    CarListComponent,
+    ButtonNewCarComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CoinRoutingModule,
+    CarRoutingModule,
     TableModule,
     DialogModule,
     ButtonModule,
     InputTextModule,
     PipesModule,
-    SearchModule,
-    FormErrorMsgModule
+    SearchModule
   ],
   providers: [],
   entryComponents: []
 })
-export class CoinModule {
+export class CarModule {
 }

@@ -11,3 +11,5 @@ export * from './coin-store';
 export * from './market-store';
 export * from './person-store';
 export * from './counter-store';
+export * from './car-store';
+export * from './structure-store';

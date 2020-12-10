@@ -3,8 +3,8 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as actions from './actions';
-import {Coin} from '@models/vo/coin';
-import {CoinService} from '@services/coin.service';
+import {Structure} from '@models/vo/structure';
+import {StructureService} from '@services/structure.service';
 import {
   createCall, createCatchError, createResponse,
   deleteCall, deleteCatchError, deleteResponse,
@@ -12,53 +12,50 @@ import {
   searchCall, searchCatchError, searchResponse,
   selectCall, selectCatchError, selectResponse
 } from 'ngrx-entity-crud';
-import {repeat, tap} from 'rxjs/operators';
+import {repeat} from 'rxjs/operators';
 
 @Injectable()
-export class CoinStoreEffects {
-    constructor(private readonly actions$: Actions, private readonly service: CoinService) {
+export class StructureStoreEffects {
+    constructor(private readonly actions$: Actions, private readonly service: StructureService) {
     }
 
   searchRequestEffect$: Observable<Action> = createEffect(() => this.actions$.pipe(
     ofType(actions.SearchRequest),
-    tap(value => console.log('action ', value)),
-    searchCall<Coin>(this.service),
-    tap(value => console.log('call ', value)),
-    searchResponse<Coin>(actions, {dispatchResponse: false}),
-    tap(value => console.log('response ', value)),
-    searchCatchError<Coin>(actions),
+    searchCall<Structure>(this.service),
+    searchResponse<Structure>(actions, {dispatchResponse: false}),
+    searchCatchError<Structure>(actions),
     repeat()
   ));
 
   deleteRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.DeleteRequest),
-    deleteCall<Coin>(this.service),
-    deleteResponse<Coin>(actions, Coin, {dispatchResponse: false}),
-    deleteCatchError<Coin>(actions),
+    deleteCall<Structure>(this.service),
+    deleteResponse<Structure>(actions, Structure, {dispatchResponse: false}),
+    deleteCatchError<Structure>(actions),
     repeat()
   ));
 
   createRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.CreateRequest),
-    createCall<Coin>(this.service),
-    createResponse<Coin>(actions, {dispatchResponse: false}),
-    createCatchError<Coin>(actions),
+    createCall<Structure>(this.service),
+    createResponse<Structure>(actions, {dispatchResponse: false}),
+    createCatchError<Structure>(actions),
     repeat()
   ));
 
   editRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.EditRequest),
-    editCall<Coin>(this.service),
-    editResponse<Coin>(actions, {dispatchResponse: false}),
-    editCatchError<Coin>(actions),
+    editCall<Structure>(this.service),
+    editResponse<Structure>(actions, {dispatchResponse: false}),
+    editCatchError<Structure>(actions),
     repeat()
   ));
 
   selectRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.SelectRequest),
-    selectCall<Coin>(this.service),
-    selectResponse<Coin>(actions, {dispatchResponse: false}),
-    selectCatchError<Coin>(actions),
+    selectCall<Structure>(this.service),
+    selectResponse<Structure>(actions, {dispatchResponse: false}),
+    selectCatchError<Structure>(actions),
     repeat()
   ));
 
